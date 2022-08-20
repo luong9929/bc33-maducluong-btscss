@@ -76,7 +76,7 @@
                 justify-content: space-between;
 
                 .btnPhone {
-                    @include button(13.5px, $text-semibold , $text-c1-light , $bg-c1-primary , 13px 19px, solid 1px $text-c1-primary , 50px, $text-c1-primary, $bg-c1-light, solid 1px $text-c1-primary );
+                    @include button(13.5px, $text-semibold , $text-c1-light , $bg-c1-primary , 13px 19px, solid 1px $text-c1-primary , 50px, $text-c1-primary, $bg-c1-light, solid 1px 0 0 0 1px #b61984 inset );
                     margin: 0 15px;
 
                     .fa-phone-flip {
@@ -285,19 +285,23 @@
                     &:hover {
                         box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
                     }
-
-                    img {
-                        width: 100%;
-                        transform-origin: 50% 65%;
-                        transition: transform .5s,  3s ease-in-out;
+                    .thumnail{
+                        overflow: hidden;
+                        max-height: 50%;
                         
-
-                        &:hover {
-                            
-                            transform: scale(1.1);
-
+                        img {
+                            width: 100%;
+                            transform-origin: 50% 65%;
+                            transition: transform .5s,  3s ease-in-out;
+                            &:hover {
+                                
+                                transform: scale(1.1);
+    
+                            }
                         }
+                       
                     }
+                   
 
                     .text {
                         padding: 20px 30px;

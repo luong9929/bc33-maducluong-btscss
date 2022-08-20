@@ -98,7 +98,7 @@
 .header .container .navbar .right .btnPhone:hover {
   background: #fff;
   color: #b61984;
-  border: solid 1px #b61984;
+  border: solid 1px 0 0 0 1px #b61984 inset;
 }
 .header .container .navbar .right .btnPhone .fa-phone-flip {
   margin-right: 3px;
@@ -330,12 +330,16 @@
 .team .container .row .item:hover {
   box-shadow: 0 30px 30px -10px rgba(0, 0, 0, 0.2);
 }
-.team .container .row .item img {
+.team .container .row .item .thumnail {
+  overflow: hidden;
+  max-height: 50%;
+}
+.team .container .row .item .thumnail img {
   width: 100%;
   transform-origin: 50% 65%;
   transition: transform 0.5s, 3s ease-in-out;
 }
-.team .container .row .item img:hover {
+.team .container .row .item .thumnail img:hover {
   transform: scale(1.1);
 }
 .team .container .row .item .text {
