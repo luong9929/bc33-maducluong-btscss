@@ -1,0 +1,593 @@
+@import '../scss/base/base';
+@import '../scss/variable/variable.';
+
+
+
+.header {
+    position: absolute;
+    width: 100%;
+    z-index: 10000;
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+
+        .logo {
+            width: 20%;
+
+            img {
+                width: 80px;
+            }
+        }
+
+        .navbar {
+            display: flex;
+            align-items: center;
+            width: 80%;
+            padding-left: 70px;
+            
+            @media only screen and (max-width:1280px){
+                padding-left: 0;  
+             }
+            @media only screen and (max-width:992px) {
+                display: none;
+            }
+            .left {
+                a {
+                    @include text(13px, $text-semibold, );
+                    text-decoration: none;
+                    margin: 0 30px;
+                    position: relative;
+                    transition: all 0.3s;
+                    @media only screen and (max-width:1280px){
+                       margin: 0 20px; 
+                     }
+                    &:hover {
+                        @include text(13px, $text-semibold, #b61984);
+
+                        &::after {
+                            
+                            transform: scale(1.1);
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        background-color: $bg-c1-primary;
+                        position: absolute;
+                       
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 50%;
+                        bottom: -20px;
+                        left: 50%;
+                        margin-left: -4px;
+                        transform: scale(0);
+                        transition: all .5s;
+                    }
+                }
+            }
+
+            .right {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .btnPhone {
+                    @include button(13.5px, $text-semibold , $text-c1-light , $bg-c1-primary , 13px 19px, solid 1px $text-c1-primary , 50px, $text-c1-primary, $bg-c1-light, solid 1px $text-c1-primary );
+                    margin: 0 15px;
+
+                    .fa-phone-flip {
+                        margin-right: 3px
+                    }
+                }
+
+                .icon {
+                    @include text(13px);
+
+                    .fa-twitter {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $text-c1-primary;
+                        }
+                    }
+
+                    .fa-facebook-f {
+                        padding: 0 5px;
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $text-c1-primary;
+                        }
+                    }
+
+                    .fa-youtube {
+                        cursor: pointer;
+
+                        &:hover {
+                            color: $text-c1-primary;
+                        }
+                    }
+
+                    .fa-instagram {
+                        cursor: pointer;
+                        padding: 0 5px;
+
+                        &:hover {
+                            color: $text-c1-primary;
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .navbar-toogler{
+            display: none;
+            @media only screen and (max-width:992px) {
+                display: block;
+                padding: 10px ;
+                font-size: 20px;
+                color:$text-c1-primary ;
+                background-color: $bg-c1-light;
+                border: 1px solid $text-c1-primary ;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+
+.carousel {
+    background-image: url("../img/yellow_top_wave_01.png");
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    position: relative;
+    @media only screen and (max-width:765px){
+      padding-top: 30px;
+        
+    }
+    &::after {
+        content: "";
+        background-image: url("../img/Violet_top_left_wave.png");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 215px;
+        left: 0;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        @media only screen and (max-width:1280px){
+            top: 230px;
+         }
+        @media only screen and (max-width:992px){
+            top: 250px;
+            background-size: contain;
+            z-index: 1000;
+        }
+        @media only screen and (max-width:765px){
+            top: 340px;
+            background-size: contain;
+            z-index: 1000;
+        }
+    }
+
+    .container {
+
+        .row {
+            display: flex;
+            align-items: center;
+            padding: 40px 30px 0;
+            @media only screen and (max-width:765px){
+                flex-direction: column;
+               
+                z-index: 100;
+                
+            }
+            .text {
+                animation:leftInRight 1s ;
+                transition: all 0.5s;
+                @media only screen and (max-width:765px){
+                    z-index: 100;
+                    
+                }
+                p {
+                    @include text(16.5px, $text-semibold , $text-c1-primary );
+                    margin-bottom: 10px;
+                }
+
+                h2 {
+                    @include text(52px, $text-bold , );
+                    @media only screen and (max-width:765px){
+                        font-size: 40px;
+                        
+                    }
+                }
+            }
+
+            .thumnail{
+                animation: thoatAnThoatHien 1.5s;
+                transition: all .5s;
+                @media only screen and (max-width:765px){
+                    text-align: center;
+                }
+            }
+
+        }
+    }
+}
+
+.team {
+    background-color: $bg-c1-violet;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 235px;
+        left: 0;
+        background-image: url('../img/Wave_White_bottom_right_shape_01.png');
+        width: 100%;
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        @media only screen and (max-width:1280px){
+            top: 290px;
+         }
+        @media only screen and (max-width:992px){
+            top: 300px;
+            background-size: contain;
+            
+        }
+        @media only screen and (max-width:765px){
+            top: 730px;
+            
+        }
+
+
+    }
+
+    .container {
+        padding: 30px 0;
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            z-index: 1;
+
+            .col {
+                width: 25%;
+
+                z-index: 100;
+                padding: 0 20px 20px;
+                
+                @media only screen and (max-width:765px){
+                   width: 50%;
+                    
+                }
+                @for $i from 0 to 8 {
+                    .item-#{$i + 1}{
+                        animation: thoatAnThoatHien (.5s * $i + 1) 200ms;
+                    }
+                };
+                
+                }
+                .item {
+                    border-radius: 10px;
+                    overflow: hidden;
+                    background-color: $bg-c1-light;
+                    height: 370px;
+                    &:hover {
+                        box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                    }
+
+                    img {
+                        width: 100%;
+                        transform-origin: 50% 65%;
+                        transition: transform .5s,  3s ease-in-out;
+                        
+
+                        &:hover {
+                            
+                            transform: scale(1.1);
+
+                        }
+                    }
+
+                    .text {
+                        padding: 20px 30px;
+                        text-align: center;
+
+                        .country {
+                            @include text(12px, $text-semibold, $text-c1-primary, );
+                            margin-bottom: 10px
+                        }
+
+                        .name {
+                            @include text(23px, $text-bold );
+                            margin-bottom: 10px
+                        }
+
+                        .profile {
+                            @include text(15px, $text-regular );
+                            margin-bottom: 10px
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+.contact{
+    background-image: url("../img/accent_bottom_wave_01.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
+    .container{
+        padding: 20px 0;
+        @media only screen and (max-width:765px){
+           
+        }
+        .row{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            @media only screen and (max-width:765px){
+               flex-direction: column;
+                 
+             }
+            .col{
+                z-index: 100;
+                padding: 0 25px;
+                @media only screen and (max-width:1280px){
+                  padding: 0;
+                 }
+                 
+                @media only screen and (max-width:765px){
+                    padding: 0;
+                     
+                 }
+                .thumnail{
+                    animation:leftInRight 0.5s ;
+                    transition: all .5s;
+                    @media only screen and (max-width:1280px){
+                        width: 500px;
+                     }
+                        @media only screen and (max-width:992px){
+                          img{
+                            width: 400px;
+                          }
+                         }
+                }
+                .item{
+                    @media only screen and (max-width:765px){
+                       margin-top: 15px;
+                         
+                     }
+                    background-color: $bg-c1-light;
+                    width: 100%;
+                    padding: 0 15px;
+                    box-shadow: 0 30px 30px -10px rgb(0 0 0 / 20%);
+                   border-radius: 10px;
+                   transition: all .5s;
+                   animation:thoatAnThoatHien 3s ;
+                    h2{
+                        @include text(38px,$text-bold);
+                        margin-bottom: 20px;
+                        text-align: center;
+                    }
+                    .contact-name-email{
+                        display: flex;
+                        margin-bottom: 20px;
+                       
+                        .name{
+                            
+                            margin-right: 10px;
+                            position: relative;
+                            i{
+                                @include icon(12px,13px,$text-c1-primary,1);
+                            }
+                           .inputName{
+                            @include input(12px 12px 12px 40px , 50px ,$bd-c1 1px solid )
+                           }
+                        }
+                        .email{
+                            position: relative;
+                            i{
+                                @include icon(12px,13px,$text-c1-primary,1);
+                            }
+                            .inputEmail{
+                                @include input(12px 12px 12px 40px , 50px ,$bd-c1 1px solid )
+                            }
+                        }
+                    }
+                .contact-list{
+                    margin-bottom: 20px;
+                    position: relative;
+                    i{
+                        @include icon(12px,13px,$text-c1-primary,1);
+                    }
+                    select{
+                        width: 100%;
+                        @include input(12px 12px 12px 40px , 50px ,$bd-c1 1px solid )
+                    }
+                   
+                }
+                .message{
+                    margin-bottom: 40px;
+                    position: relative;
+                    i{
+                        @include icon(14px,15px,$text-c1-primary,1);
+                    }
+                    textarea{
+                        width: 100%;
+                        height: 120px;
+                        @include input(12px 12px 12px 40px , 30px ,$bd-c1 1px solid )
+                    }
+                }
+                .btnSend{
+                    @include button(13.5px, $text-semibold , $text-c1-light , $bg-c1-primary , 13px 50px, solid 1px $text-c1-primary , 50px, $text-c1-primary, $bg-c1-light, solid 1px $text-c1-primary );
+                    margin-bottom: 50px;
+                }
+            }
+        }
+    }
+}
+}
+
+.footer{
+    background-image: url('../img/footer_background.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    padding: 50px;
+    color:$text-c1-light ;
+    font-size: 14px;
+    @media only screen and (max-width:765px){
+        background-size: cover;
+       
+        
+     }
+    .container{
+        .row{
+            display: flex;
+            
+            
+            padding: 40px;
+            @media only screen and (max-width:765px){
+                padding: 0;
+              
+            }
+         .col{
+            width: 25%;
+            @media only screen and (max-width:765px){
+                padding-right: 15px;
+                flex-wrap: wrap;
+              
+            }
+            @for $i from 0 to 4 {
+                .item-#{$i + 1}{
+                    animation:thoatAnThoatHien (1s*$i+0.5)  ;
+                    
+                }
+            }
+            .item-1{
+                .addres{
+                    font-family: 'Roboto', sans-serif;
+                    i{
+                        margin-right: 10px;
+                        margin-bottom: 15px;
+                    }
+                }
+                .phone{
+                    @extend .addres
+                }
+                .time{
+                    @extend .addres
+                }
+                .icon{
+                    margin-top: 15px;
+                    i{
+                        margin-right: 10px;
+                        cursor: pointer;
+                        transition: all 0.5s;
+                        &:hover{
+                            color: $text-c1-dark
+
+                        }
+                    }
+                }
+            }
+
+            .item{
+                .title{
+                    @include text(24px,$text-bold,$text-c1-light);
+                    margin-bottom: 30px;
+                    
+                }
+
+                ul{
+                    li{
+                        list-style: none;
+                        margin-bottom: 25px;
+                        
+                        a{
+                            text-decoration: none;
+                            font-family: 'Roboto', sans-serif;
+                            color: $text-c1-light;
+                           position: relative;
+                           transition: all .5s;
+                           &:hover{
+                            color: $text-c1-primary;
+                            opacity: 0.8;
+                           }
+                            &::after{
+                                content: '';
+                                width: 60px;
+                                height: 0.8px;
+                                display: block;
+                                background-color: $bg-c1-dark;
+                                position: absolute;
+                                top: 30px;
+                                left: 0;
+                                opacity: 0.2;
+                            }
+                        }
+                    }
+                }
+
+                .yourEmail{
+                    text-align: center;
+                    background-color: $bg-c1-primary;
+                    margin-bottom: 15px;
+                    width: 100%;
+                    &::placeholder{
+                        color: $text-c1-light
+                    }
+                    &:focus{
+                        border: $text-c1-light 1px solid;
+                    }
+                    @include input(15px, 50px ,1px solid rgba(255,255,255,.1) );
+                    
+                }
+                .btnsub{
+                    width: 100%;
+                    @include button(13.5px, $text-semibold , $text-c1-dark , $bg-c1-light , 15px 55px, solid 1px $text-c1-primary , 50px, $text-c1-light, $bg-c1-primary, solid 1px $text-c1-light );
+                    margin-bottom: 50px;
+                   
+                    @media only screen and (max-width:765px){
+                        text-align: center;
+                        @include button(13.5px, $text-semibold , $text-c1-dark , $bg-c1-light , 15px 20px, solid 1px $text-c1-primary , 50px, $text-c1-light, $bg-c1-primary, solid 1px $text-c1-light );
+                        
+                    }
+                }
+            }
+         }
+        }
+    }
+}
+
+@keyframes leftInRight {
+    0%{
+        transform: translateX(-300px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+ @keyframes thoatAnThoatHien {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+ }
